@@ -2,6 +2,7 @@
 
 #include "types.hpp"
 
+#include <algorithm>
 #include <iostream>
 
 #define CW_FOR_2( type, v1, f1, t1, v2, f2, t2 )                \
@@ -82,7 +83,8 @@ watershed( const affinity_graph_ptr<F>& aff_ptr, const L& lowv, const H& highv ,
 
         F m = std::max({negx,negy,negz,posx,posy,posz});
 
-        if ( m > low )
+        // Modified condition: exclude voxels based on min(x, y) affinities
+        if ( std::min(negx, negy) > low )
         {
             if ( negx == m || negx >= high ) { id |= 0x01; }
             if ( negy == m || negy >= high ) { id |= 0x02; }
