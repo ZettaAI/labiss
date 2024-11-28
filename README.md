@@ -1,5 +1,5 @@
 # Abiss
-Affinity based image segmentation system, implementing algorithm described in https://arxiv.org/abs/2106.10795
+Long-range affinity based image segmentation system, implementing algorithm described in https://arxiv.org/abs/2106.10795
 
 # Build
 ```sh
