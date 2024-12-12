@@ -115,7 +115,7 @@ void traverseSegments(const Ts& seg, Ta& ... extractors)
     auto shape = seg.shape();
     auto c = Coord({0,0,0});
 
-    constexpr auto long_range = std::array<int, 3> {5, 5, 2};
+    constexpr auto long_range = std::array<int, 3> {5, 5, 5};
 
     constexpr auto scan_grid = std::array<std::array<int, 3>, 12> {{
                             {-1,0,0}, {0,-1,0}, {0,0,-1},
